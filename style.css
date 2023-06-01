@@ -1,0 +1,103 @@
+* {
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+}
+
+html {
+  font-family: Arial, Helvetica, sans-serif;
+}
+body {
+  font-size: 10px;
+}
+/* Navbar  */
+.navbar {
+  font-size: 1rem;
+}
+
+/* Footer  */
+.footer {
+  position: absolute;
+  bottom: 0%;
+  width: 100%;
+  font-size: 1.6rem;
+  /* border: 2px solid red; */
+  height: 10vh;
+  text-align: center;
+}
+
+/* Table  */
+.main_table {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  gap: 3rem;
+  font-size: 1.6rem;
+  width: 100%;
+  height: 100%;
+}
+
+.table_header_content {
+  width: 100%;
+  position: relative;
+  margin-bottom: 2rem;
+  font-size: 1.6rem;
+  display: flex;
+  justify-content: center;
+  margin-top: 8rem;
+}
+.table_header_content .table_header_container {
+  display: flex;
+  justify-content: space-between;
+  width: 60vw;
+  padding: 1rem;
+  border-bottom: 1px solid lightgray;
+}
+.table_header_content .left {
+  transform: translateY(1.8rem);
+}
+
+.table_header_content .right {
+  transform: translateY(1.8rem);
+}
+.table_header_content .middle h1 {
+  font-size: 3rem;
+}
+
+.main_sub_table {
+  width: 60vw;
+}
+.main_sub_table .icons {
+  display: flex;
+  gap: 1rem;
+  font-size: 1.4rem;
+}
+.main_sub_table .icons a {
+  color: black;
+}
+
+/* Modal  */
+.modal {
+  transform: translateY(10rem);
+}
+.modal .modal-body .modal_input {
+  border: none;
+  outline: none;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid lightgrey;
+  padding: 0.5rem;
+  font-size: 1.3rem;
+  color: grey;
+}
+::placeholder {
+  margin-bottom: 1rem;
+  font-size: 1rem;
+}
+
+.update_form {
+  border: 1px solid red;
+}
+.form_container {
+  border: 1px solid red;
+}
