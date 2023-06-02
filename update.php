@@ -40,28 +40,20 @@ if($_SERVER["REQUEST_METHOD"] == "GET"){
         }
 }
 ?>
-
-
-<html>
-<html lang="en">
-   <head>
-       <meta charset="UTF-8">
-       <title>Material Design for Bootstrap</title>
-       <link rel="stylesheet" href="style.css">
        <style>
 
-        .form_container{
+        .update_form_container{
           width: 40vw;
           padding: 2rem 1rem 2rem 1rem;
           border-radius: 1rem;
           box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
         }
-        .form_container  input{
+        .update_form_container  input{
           border: none;
           border-bottom: 1px solid lightgrey;
           outline:none;
         }
-        .form_container  .form-label{
+        .update_form_container  .form-label{
           font-size: 1.2rem;
           font-weight: bold;
           letter-spacing: .1rem;
@@ -69,14 +61,10 @@ if($_SERVER["REQUEST_METHOD"] == "GET"){
         .update_btn{
           width:100%;
         }
-       </style>
-   </head>
-   <body>
-    
-   
+       </style>  
 <form method="post" class="d-flex  justify-content-center align-items-center
  flex-column update_form" style="margin-top:5rem;" >
- <div class="form_container">
+ <div class="update_form_container">
     <h2 class="text-center">Update it</h2>
   <div class="mb-3">
   <input type="hidden" name="id" value="<?php echo $id; ?>" class="form-control"> <br>

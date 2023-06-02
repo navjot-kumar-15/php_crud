@@ -16,15 +16,15 @@ body {
 }
 
 /* Footer  */
-.footer {
+/* .footer {
   position: absolute;
   bottom: 0%;
   width: 100%;
   font-size: 1.6rem;
-  /* border: 2px solid red; */
+  border: 2px solid red;
   height: 10vh;
   text-align: center;
-}
+} */
 
 /* Table  */
 .main_table {
@@ -93,11 +93,4 @@ body {
 ::placeholder {
   margin-bottom: 1rem;
   font-size: 1rem;
-}
-
-.update_form {
-  border: 1px solid red;
-}
-.form_container {
-  border: 1px solid red;
 }

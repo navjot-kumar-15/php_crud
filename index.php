@@ -1,8 +1,26 @@
 <?php 
 require_once 'includes/header.php';
 
+
+
 ?>
 
+
+<style>
+.pagination_container{
+  width: 100%;
+  position: absolute;
+  top: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.1rem;
+
+}
+
+</style>
+
+ <!-- Modal  -->
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -26,6 +44,8 @@ require_once 'includes/header.php';
     </div>
   </div>
 </div>
+
+<!-- Table  -->
 <div class="main_table">
 <div class="table_header_content">
     <div class="table_header_container">
@@ -33,7 +53,7 @@ require_once 'includes/header.php';
         <a href="add.php" class="btn btn-success"  data-bs-toggle="modal" data-bs-target="#exampleModal">Add Task</a>
         </div>
         <div class="middle">
-            <h1>Todo List</h1>
+            <h1>User List</h1>
         </div>
         <div class="right "> 
             <button type="button" class="btn btn-secondary">Print</button>
@@ -54,10 +74,20 @@ require_once 'includes/header.php';
   </thead>
   <tbody>
     <tr>
+    <?php   
+//     Adding the pagination here ------->>>>
+    $limit = 7;
 
-    <?php 
-    // Reading the file
-    $sql = 'select * from tasks';
+    if(isset($_GET['page'])){
+      $page = $_GET['page'];
+    }else{
+      $page = 1;
+    }
+    $offset = ($page-1) * $limit;
+
+    //     Fetching the data from the database--->>>>
+    $sql = "select * from `tasks` LIMIT {$offset}, {$limit}";
+
      $rows = $conn->query($sql);
      if(!$rows){
       die("Invalid query");
@@ -84,6 +114,41 @@ require_once 'includes/header.php';
 </table>
     </div>
 </div>
+
+<!-- Pagination  -->
+<?php 
+
+$pagination = "SELECT * FROM `tasks` WHERE 1 ";
+
+$result1 = mysqli_query($conn,$pagination) or die("<script>alert('Server is down')</script>") ; 
+
+if(mysqli_num_rows($result1) > 0){
+
+$total_records = mysqli_num_rows($result1);
+$total_page = ceil($total_records /$limit);
+?>
+
+<div class="pagination pagination_container">
+<nav aria-label="Page navigation example">
+  <ul class="pagination">
+    <li class="page-item">
+      <a class="page-link" href="#" aria-label="Previous">
+        <span aria-hidden="true">&laquo;</span>
+      </a>
+    </li>
+    <?php for($i=1;$i<=$total_page;$i++){ ?>
+    <li class="page-item"><a class="page-link" href="index.php?page=<?php echo $i; ?>"><?php echo $i;?></a></li>
+<?php } ?>
+    <li class="page-item">
+      <a class="page-link" href="#" aria-label="Next">
+        <span aria-hidden="true">&raquo;</span>
+      </a>
+    </li>
+  </ul>
+</nav>
+</div>
+<?php }?>
+
 
 <?php 
 require 'includes/footer.php'

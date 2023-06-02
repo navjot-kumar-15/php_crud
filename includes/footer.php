@@ -1,4 +1,16 @@
 
+<style>
+.footer {
+  position: absolute;
+  bottom: -17%;
+  width: 100%;
+  font-size: 1.6rem;
+  height: 10vh;
+  text-align: center;
+}
+
+</style>
+
 <footer>
 
 <p class="footer">This is footer</p>
