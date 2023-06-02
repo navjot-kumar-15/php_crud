@@ -76,7 +76,7 @@ require_once 'includes/header.php';
     <tr>
     <?php   
 //     Adding the pagination here ------->>>>
-    $limit = 7;
+    $limit = 5;
 
     if(isset($_GET['page'])){
       $page = $_GET['page'];
@@ -131,19 +131,23 @@ $total_page = ceil($total_records /$limit);
 <div class="pagination pagination_container">
 <nav aria-label="Page navigation example">
   <ul class="pagination">
+    <?php if($page > 1){?>
     <li class="page-item">
-      <a class="page-link" href="#" aria-label="Previous">
+      <a class="page-link" href="index.php?page=<?php echo $page-1; ?>" aria-label="Previous">
         <span aria-hidden="true">&laquo;</span>
       </a>
     </li>
+    <?php }?>
     <?php for($i=1;$i<=$total_page;$i++){ ?>
     <li class="page-item"><a class="page-link" href="index.php?page=<?php echo $i; ?>"><?php echo $i;?></a></li>
 <?php } ?>
+<?php if($page < $total_page){?>
     <li class="page-item">
-      <a class="page-link" href="#" aria-label="Next">
+      <a class="page-link" href="index.php?page=<?php echo $page+1; ?>" aria-label="Next">
         <span aria-hidden="true">&raquo;</span>
       </a>
     </li>
+    <?php  }?>
   </ul>
 </nav>
 </div>
