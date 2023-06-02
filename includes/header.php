@@ -12,6 +12,14 @@ require_once 'db.php';
     <link rel="stylesheet" href="style.css">
     <!-- FontAwesome link -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+      .navbar{
+        position: sticky;
+        top:0%;
+      }
+
+    </style>
 </head>
 <body>
 
@@ -22,14 +30,7 @@ require_once 'db.php';
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Features</a>
-        </li>
-      </ul>
+
     </div>
   </div>
 </nav>
